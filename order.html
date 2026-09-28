@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>অর্ডার করুন | VYROX Studio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Noto Sans Bengali","Hind Siliguri",Arial,sans-serif;
+    background:#080808;
+    color:#fff;
+    min-height:100vh;
+}
+
+.container{
+    width:92%;
+    max-width:700px;
+    margin:auto;
+}
+
+header{
+    padding:25px 0;
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    font-family:Arial,sans-serif;
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#777;
+}
+
+.order{
+    padding:70px 0;
+}
+
+.back{
+    color:#888;
+    text-decoration:none;
+    font-size:14px;
+}
+
+h1{
+    font-size:clamp(38px,8vw,65px);
+    line-height:1.1;
+    margin:25px 0 10px;
+}
+
+.subtitle{
+    color:#888;
+    margin-bottom:35px;
+}
+
+.box{
+    background:#111;
+    border:1px solid #292929;
+    border-radius:15px;
+    padding:30px;
+    margin-bottom:20px;
+}
+
+.selected{
+    color:#888;
+    font-size:13px;
+}
+
+.package-name{
+    font-size:28px;
+    margin-top:5px;
+}
+
+.price{
+    font-family:Arial,sans-serif;
+    font-size:38px;
+    font-weight:900;
+    margin-top:5px;
+}
+
+label{
+    display:block;
+    color:#aaa;
+    font-size:14px;
+    margin:18px 0 7px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:14px;
+    border-radius:8px;
+    border:1px solid #333;
+    background:#080808;
+    color:#fff;
+    outline:none;
+    font-family:inherit;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+    border-color:#777;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:22px;
+    border:0;
+    border-radius:8px;
+    background:#fff;
+    color:#000;
+    font-family:inherit;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ddd;
+}
+
+.note{
+    color:#666;
+    font-size:13px;
+    margin-top:15px;
+    text-align:center;
+}
+
+.success{
+    display:none;
+    text-align:center;
+}
+
+.success h2{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.success p{
+    color:#aaa;
+}
+
+.chat-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:13px 25px;
+    border:1px solid #333;
+    border-radius:8px;
+    color:#fff;
+    text-decoration:none;
+}
+
+@media(max-width:500px){
+
+    .order{
+        padding:50px 0;
+    }
+
+    .box{
+        padding:22px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<div class="logo">
+VYROX<span>.</span>
+</div>
+
+</div>
+
+</header>
+
+
+<div class="container">
+
+<section class="order">
+
+<a href="index.html" class="back">
+← ওয়েবসাইটে ফিরে যান
+</a>
+
+<h1>অর্ডার করুন</h1>
+
+<p class="subtitle">
+আপনার তথ্য দিন। এরপর VYROX টিম আপনার সাথে যোগাযোগ করবে।
+</p>
+
+
+<!-- SELECTED PACKAGE -->
+
+<div class="box">
+
+<div class="selected">
+নির্বাচিত প্যাকেজ
+</div>
+
+<div class="package-name" id="packageName">
+প্যাকেজ
+</div>
+
+<div class="price" id="packagePrice">
+৳০
+</div>
+
+</div>
+
+
+<!-- FORM -->
+
+<div class="box" id="orderBox">
+
+<form id="orderForm">
+
+<label>
+আপনার নাম
+</label>
+
+<input
+type="text"
+id="name"
+placeholder="আপনার নাম লিখুন"
+required
+>
+
+
+<label>
+ইমেইল
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="আপনার ইমেইল লিখুন"
+required
+>
+
+
+<label>
+কী ধরনের কাজ চান?
+</label>
+
+<select id="service" required>
+
+<option value="">
+সার্ভিস নির্বাচন করুন
+</option>
+
+<option>
+ভিডিও এডিটিং
+</option>
+
+<option>
+থাম্বনেইল ডিজাইন
+</option>
+
+<option>
+ফটো এডিটিং
+</option>
+
+<option>
+সোশ্যাল মিডিয়া ডিজাইন
+</option>
+
+<option>
+শর্ট ফর্ম কনটেন্ট
+</option>
+
+<option>
+কাস্টম প্রজেক্ট
+</option>
+
+</select>
+
+
+<label>
+আপনার প্রজেক্ট সম্পর্কে বলুন
+</label>
+
+<textarea
+id="message"
+placeholder="আপনার প্রয়োজন বা প্রজেক্টের বিস্তারিত লিখুন..."
+required></textarea>
+
+
+<button type="submit">
+অর্ডার রিকোয়েস্ট পাঠান →
+</button>
+
+<p class="note">
+অর্ডার পাঠানোর পর VYROX টিম আপনার সাথে যোগাযোগ করবে।
+</p>
+
+</form>
+
+</div>
+
+
+<!-- SUCCESS -->
+
+<div class="box success" id="success">
+
+<h2>অর্ডার রিকোয়েস্ট তৈরি হয়েছে! ✓</h2>
+
+<p>
+আপনার তথ্য প্রস্তুত হয়েছে।
+এখন VYROX-এর সাথে চ্যাট করে
+প্রজেক্টের বিস্তারিত আলোচনা করুন।
+</p>
+
+<a href="#" class="chat-btn" onclick="openChat();return false;">
+VYROX-এর সাথে চ্যাট করুন →
+</a>
+
+</div>
+
+</section>
+
+</div>
+
+
+<script>
+
+/* PACKAGE DATA */
+
+const packages = {
+
+starter:{
+name:"শুরুর প্যাকেজ",
+price:"৳৯৯৯"
+},
+
+creator:{
+name:"ক্রিয়েটর প্যাকেজ",
+price:"৳১,৯৯৯"
+},
+
+pro:{
+name:"প্রিমিয়াম প্যাকেজ",
+price:"৳৩,৯৯৯"
+}
+
+};
+
+
+/* GET PACKAGE FROM URL */
+
+const params =
+new URLSearchParams(window.location.search);
+
+const selected =
+params.get("package") || "starter";
+
+const current =
+packages[selected] || packages.starter;
+
+
+/* SHOW PACKAGE */
+
+document.getElementById("packageName")
+.innerText=current.name;
+
+document.getElementById("packagePrice")
+.innerText=current.price;
+
+
+/* FORM */
+
+document.getElementById("orderForm")
+.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+document.getElementById("orderBox")
+.style.display="none";
+
+document.getElementById("success")
+.style.display="block";
+
+});
+
+
+/* TAWK */
+
+function openChat(){
+
+if(
+typeof Tawk_API !== "undefined" &&
+typeof Tawk_API.maximize === "function"
+){
+
+Tawk_API.maximize();
+
+}else{
+
+alert("চ্যাট লোড হচ্ছে। একটু পরে আবার চেষ্টা করুন।");
+
+}
+
+}
+
+</script>
+
+
+<!-- TAWK.TO -->
+
+<script type="text/javascript">
+
+var Tawk_API=Tawk_API||{},
+Tawk_LoadStart=new Date();
+
+(function(){
+
+var s1=document.createElement("script"),
+s0=document.getElementsByTagName("script")[0];
+
+s1.async=true;
+
+s1.src=
+'https://embed.tawk.to/6abac70d4c69e23447f4d58b/1k3kpj3kk';
+
+s1.charset='UTF-8';
+
+s1.setAttribute('crossorigin','*');
+
+s0.parentNode.insertBefore(s1,s0);
+
+})();
+
+</script>
+
+</body>
+</html>
