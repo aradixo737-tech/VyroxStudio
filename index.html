@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VYROX Studio | আপনার ভিশন, আমাদের কাজ</title>
+
+<meta name="description"
+content="VYROX Studio — ভিডিও এডিটিং, থাম্বনেইল, ফটো এডিটিং ও ক্রিয়েটিভ ডিজাইন সার্ভিস।">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Noto Sans Bengali","Hind Siliguri",Arial,sans-serif;
+    background:#080808;
+    color:#fff;
+    line-height:1.7;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font-family:inherit;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(8,8,8,.92);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #222;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:17px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-family:Arial,sans-serif;
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#777;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#aaa;
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 20px 70px;
+    background:radial-gradient(circle,#202020 0%,#080808 60%);
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.tag{
+    color:#888;
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:Arial,sans-serif;
+    font-size:clamp(50px,10vw,105px);
+    line-height:.95;
+    letter-spacing:-5px;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#777;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    color:#aaa;
+    font-size:17px;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    border-radius:8px;
+    border:1px solid #333;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.primary{
+    background:#fff;
+    color:#000;
+}
+
+.primary:hover{
+    background:#ddd;
+    transform:translateY(-2px);
+}
+
+.secondary{
+    background:transparent;
+    color:#fff;
+}
+
+.secondary:hover{
+    background:#181818;
+}
+
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.label{
+    color:#777;
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+.title{
+    font-size:clamp(35px,6vw,60px);
+    line-height:1.1;
+    margin-bottom:45px;
+}
+
+/* SERVICES */
+
+.services{
+    background:#0d0d0d;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    background:#111;
+    border:1px solid #252525;
+    border-radius:13px;
+    padding:28px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#555;
+}
+
+.number{
+    color:#666;
+    font-size:13px;
+    margin-bottom:28px;
+}
+
+.card h3{
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#888;
+    font-size:14px;
+}
+
+/* PACKAGES */
+
+.packages{
+    background:#080808;
+}
+
+.package-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.package{
+    background:#111;
+    border:1px solid #292929;
+    border-radius:15px;
+    padding:32px 25px;
+    transition:.3s;
+}
+
+.package:hover{
+    transform:translateY(-6px);
+    border-color:#666;
+}
+
+.package.featured{
+    border-color:#fff;
+}
+
+.package h3{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.price{
+    font-family:Arial,sans-serif;
+    font-size:40px;
+    font-weight:900;
+    margin:8px 0 22px;
+}
+
+.package ul{
+    list-style:none;
+    margin-bottom:25px;
+}
+
+.package li{
+    color:#aaa;
+    padding:8px 0;
+    border-bottom:1px solid #202020;
+    font-size:14px;
+}
+
+.package li::before{
+    content:"✓ ";
+    color:#fff;
+}
+
+.package .btn{
+    width:100%;
+    text-align:center;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+    background:#0d0d0d;
+}
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.portfolio-card{
+    height:230px;
+    background:linear-gradient(135deg,#1b1b1b,#0e0e0e);
+    border:1px solid #252525;
+    border-radius:12px;
+    display:flex;
+    align-items:flex-end;
+    padding:22px;
+}
+
+.portfolio-card p{
+    color:#777;
+    font-size:13px;
+}
+
+/* PROCESS */
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.process{
+    padding:25px;
+    border-left:1px solid #333;
+}
+
+.process span{
+    color:#666;
+}
+
+.process h3{
+    margin:15px 0 8px;
+}
+
+.process p{
+    color:#888;
+    font-size:14px;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    background:#111;
+}
+
+.cta h2{
+    font-size:clamp(38px,7vw,75px);
+    line-height:1.1;
+    margin-bottom:18px;
+}
+
+.cta p{
+    color:#888;
+    margin-bottom:30px;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #222;
+    padding:35px 20px;
+}
+
+.footer{
+    max-width:1150px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.footer-text{
+    color:#666;
+    font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .service-grid,
+    .package-grid,
+    .portfolio-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process{
+        border-left:none;
+        border-top:1px solid #333;
+    }
+}
+
+@media(max-width:500px){
+
+    section{
+        padding:75px 18px;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+
+    .btn{
+        width:100%;
+        max-width:300px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<div class="nav">
+
+<a href="#home" class="logo">
+VYROX<span>.</span>
+</a>
+
+<ul class="nav-links">
+<li><a href="#home">হোম</a></li>
+<li><a href="#services">সার্ভিস</a></li>
+<li><a href="#packages">প্যাকেজ</a></li>
+<li><a href="#portfolio">পোর্টফোলিও</a></li>
+<li><a href="#process">প্রক্রিয়া</a></li>
+<li><a href="#contact">যোগাযোগ</a></li>
+</ul>
+
+</div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="tag">
+VYROX STUDIO • ক্রিয়েটিভ এডিটিং স্টুডিও
+</div>
+
+<h1>
+আপনার ভিশনকে<br>
+<span>আমরা নতুন রূপ দিই।</span>
+</h1>
+
+<p>
+ভিডিও এডিটিং, থাম্বনেইল, ফটো এডিটিং এবং
+ক্রিয়েটিভ ডিজাইনের মাধ্যমে আপনার কনটেন্টকে
+আরও প্রফেশনাল করে তুলুন।
+</p>
+
+<div class="buttons">
+
+<a href="#packages" class="btn primary">
+প্যাকেজ দেখুন →
+</a>
+
+<button class="btn secondary" onclick="openChat()">
+আমাদের সাথে কথা বলুন
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="label">আমাদের সার্ভিস</div>
+
+<h2 class="title">আমরা যা করি</h2>
+
+<div class="service-grid">
+
+<div class="card">
+<div class="number">০১</div>
+<h3>ভিডিও এডিটিং</h3>
+<p>
+YouTube, Gaming, Shorts, Reels ও অন্যান্য
+ভিডিওর প্রফেশনাল এডিটিং।
+</p>
+</div>
+
+<div class="card">
+<div class="number">০২</div>
+<h3>থাম্বনেইল ডিজাইন</h3>
+<p>
+আকর্ষণীয় ও ক্লিকযোগ্য থাম্বনেইল ডিজাইন।
+</p>
+</div>
+
+<div class="card">
+<div class="number">০৩</div>
+<h3>ফটো এডিটিং</h3>
+<p>
+Creator, Brand এবং ব্যক্তিগত ছবির
+ক্রিয়েটিভ এডিটিং।
+</p>
+</div>
+
+<div class="card">
+<div class="number">০৪</div>
+<h3>সোশ্যাল মিডিয়া ডিজাইন</h3>
+<p>
+Facebook, Instagram এবং অন্যান্য
+সোশ্যাল মিডিয়ার জন্য ডিজাইন।
+</p>
+</div>
+
+<div class="card">
+<div class="number">০৫</div>
+<h3>শর্ট ফর্ম কনটেন্ট</h3>
+<p>
+Reels ও Shorts-এর জন্য আকর্ষণীয়
+ভিডিও এডিটিং।
+</p>
+</div>
+
+<div class="card">
+<div class="number">০৬</div>
+<h3>কাস্টম প্রজেক্ট</h3>
+<p>
+আপনার প্রয়োজন অনুযায়ী বিশেষ
+ক্রিয়েটিভ প্রজেক্ট।
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PACKAGES -->
+
+<section class="packages" id="packages">
+
+<div class="container">
+
+<div class="label">আমাদের প্যাকেজ</div>
+
+<h2 class="title">আপনার পছন্দের প্যাকেজ</h2>
+
+<div class="package-grid">
+
+
+<!-- 999 -->
+
+<div class="package">
+
+<h3>শুরুর প্যাকেজ</h3>
+
+<div class="price">৳৯৯৯</div>
+
+<ul>
+<li>১টি ভিডিও এডিট</li>
+<li>সাধারণ কাট ও ট্রানজিশন</li>
+<li>বেসিক কালার এডিট</li>
+<li>১ বার রিভিশন</li>
+<li>৩–৫ দিনের ডেলিভারি</li>
+</ul>
+
+<a href="order.html?package=starter"
+class="btn secondary">
+এখনই কিনুন →
+</a>
+
+</div>
+
+
+<!-- 1999 -->
+
+<div class="package featured">
+
+<h3>ক্রিয়েটর প্যাকেজ</h3>
+
+<div class="price">৳১,৯৯৯</div>
+
+<ul>
+<li>১টি প্রফেশনাল ভিডিও এডিট</li>
+<li>অ্যাডভান্সড ট্রানজিশন</li>
+<li>কালার গ্রেডিং</li>
+<li>সাউন্ড এডিটিং</li>
+<li>থাম্বনেইল ডিজাইন</li>
+<li>২ বার রিভিশন</li>
+</ul>
+
+<a href="order.html?package=creator"
+class="btn primary">
+এখনই কিনুন →
+</a>
+
+</div>
+
+
+<!-- 3999 -->
+
+<div class="package">
+
+<h3>প্রিমিয়াম প্যাকেজ</h3>
+
+<div class="price">৳৩,৯৯৯</div>
+
+<ul>
+<li>প্রিমিয়াম ভিডিও এডিট</li>
+<li>অ্যাডভান্সড মোশন গ্রাফিক্স</li>
+<li>প্রফেশনাল কালার গ্রেডিং</li>
+<li>প্রফেশনাল সাউন্ড ডিজাইন</li>
+<li>থাম্বনেইল ডিজাইন</li>
+<li>৩ বার রিভিশন</li>
+<li>প্রায়োরিটি ডেলিভারি</li>
+</ul>
+
+<a href="order.html?package=pro"
+class="btn secondary">
+এখনই কিনুন →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PORTFOLIO -->
+
+<section class="portfolio" id="portfolio">
+
+<div class="container">
+
+<div class="label">আমাদের কাজ</div>
+
+<h2 class="title">পোর্টফোলিও</h2>
+
+<div class="portfolio-grid">
+
+<div class="portfolio-card">
+<div>
+<h3>প্রজেক্ট ০১</h3>
+<p>ভিডিও এডিটিং</p>
+</div>
+</div>
+
+<div class="portfolio-card">
+<div>
+<h3>প্রজেক্ট ০২</h3>
+<p>থাম্বনেইল ডিজাইন</p>
+</div>
+</div>
+
+<div class="portfolio-card">
+<div>
+<h3>প্রজেক্ট ০৩</h3>
+<p>ফটো এডিটিং</p>
+</div>
+</div>
+
+<div class="portfolio-card">
+<div>
+<h3>প্রজেক্ট ০৪</h3>
+<p>সোশ্যাল মিডিয়া ডিজাইন</p>
+</div>
+</div>
+
+<div class="portfolio-card">
+<div>
+<h3>প্রজেক্ট ০৫</h3>
+<p>শর্ট ফর্ম কনটেন্ট</p>
+</div>
+</div>
+
+<div class="portfolio-card">
+<div>
+<h3>প্রজেক্ট ০৬</h3>
+<p>কাস্টম প্রজেক্ট</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section id="process">
+
+<div class="container">
+
+<div class="label">কাজের প্রক্রিয়া</div>
+
+<h2 class="title">সহজ ৪টি ধাপ</h2>
+
+<div class="process-grid">
+
+<div class="process">
+<span>০১</span>
+<h3>প্রয়োজন জানান</h3>
+<p>আপনি কী কাজ চান তা আমাদের জানান।</p>
+</div>
+
+<div class="process">
+<span>০২</span>
+<h3>আলোচনা</h3>
+<p>প্রজেক্ট ও প্রয়োজনীয় বিষয় নিয়ে আলোচনা করি।</p>
+</div>
+
+<div class="process">
+<span>০৩</span>
+<h3>আমরা তৈরি করি</h3>
+<p>আপনার প্রজেক্ট নিয়ে কাজ শুরু করি।</p>
+</div>
+
+<div class="process">
+<span>০৪</span>
+<h3>ডেলিভারি</h3>
+<p>সম্পূর্ণ কাজ আপনাকে ডেলিভারি দেওয়া হয়।</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta" id="contact">
+
+<div class="container">
+
+<h2>আপনার প্রজেক্ট শুরু করুন।</h2>
+
+<p>
+VYROX Studio-এর সাথে আজই কথা বলুন।
+</p>
+
+<button class="btn primary" onclick="openChat()">
+VYROX-এর সাথে চ্যাট করুন →
+</button>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer">
+
+<div class="logo">
+VYROX<span>.</span>
+</div>
+
+<div class="footer-text">
+© ২০২৬ VYROX Studio — সর্বস্বত্ব সংরক্ষিত।
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- CHAT FUNCTION -->
+
+<script>
+
+function openChat(){
+
+if(
+typeof Tawk_API !== "undefined" &&
+typeof Tawk_API.maximize === "function"
+){
+
+Tawk_API.maximize();
+
+}else{
+
+alert("চ্যাট লোড হচ্ছে। একটু পরে আবার চেষ্টা করুন।");
+
+}
+
+}
+
+</script>
+
+
+<!-- TAWK.TO -->
+
+<script type="text/javascript">
+
+var Tawk_API=Tawk_API||{},
+Tawk_LoadStart=new Date();
+
+(function(){
+
+var s1=document.createElement("script"),
+s0=document.getElementsByTagName("script")[0];
+
+s1.async=true;
+
+s1.src=
+'https://embed.tawk.to/6abac70d4c69e23447f4d58b/1k3kpj3kk';
+
+s1.charset='UTF-8';
+
+s1.setAttribute('crossorigin','*');
+
+s0.parentNode.insertBefore(s1,s0);
+
+})();
+
+</script>
+
+</body>
+  </html>
